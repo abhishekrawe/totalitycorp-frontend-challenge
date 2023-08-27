@@ -1,15 +1,24 @@
 import "./App.css";
-import Home from "./component/Home";
-
-
+import Header from "./components/Header";
+import { BrowserRouter, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Cart from "./components/Cart";
+import Hero from "./components/Hero";
 
 function App() {
   return (
-    <div className="App">
-      <>
-        <Home />
-      </>
-    </div>
+    <BrowserRouter>
+      <Header />
+      <Hero/>
+      <div className="App">
+        <Route path="/" exact>
+          <Home />
+        </Route>
+        <Route path="/cart">
+          <Cart />
+        </Route>
+      </div>
+    </BrowserRouter>
   );
 }
 
