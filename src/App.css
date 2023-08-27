@@ -1,101 +1,19 @@
-.image {
-  height: 260px;
-  width: 200px;
-  margin-left: 85px;
-}
-
-.price {
-  color: rgb(255, 153, 75);
-}
-
-.card-img {
-  object-fit: cover;
-  height: 620px;
+a {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 
-.container-main {
-  text-align: center;
+/* Scroll bar */
+body::-webkit-scrollbar {
+  width: 5px;
 }
 
-.ml-1 {
-  padding-left: 40px !important;
-  padding-right: 40px !important;
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
-.header {
-  margin-top: 14rem !important;
-}
-
-.filterCat {
-  position: absolute;
-  top: 15%;
-  left: 11%;
-  z-index: 999;
-}
-
-.input-group {
-  left: 93px;
-  z-index: 999;
-}
-
-.cart {
-  color: white;
-  font-weight: 500;
-  margin-left: 30px;
-}
-
-.login {
-  color: white;
-}
-
-@media screen and (max-width: 479px) {
-  .image {
-    margin-left: 60px;
-  }
-
-  .menu {
-    display: none;
-  }
-
-  .cart {
-    margin-left: -15px;
-    margin-top: 14px;
-  }
-
-  .login {
-    margin-left: -4px;
-    margin-top: 8px;
-  }
-
-  .input-group {
-    left: 50px;
-    bottom: -5px;
-    width: 100%;
-  }
-
-  .filterCat {
-    top: 11%;
-    left: 5%;
-  }
-}
-
-@media only screen and (min-width: 768px) and (max-width: 979px) {
-
-  .image {
-    margin-left: -17px;
-  }
-
-  .filterCat {
-    top: 8.5%;
-    left: 5%;
-  }
-
-  .cart {
-    margin-left: 32px;
-  }
-
-  .input-group {
-    left: 24px;
-  }
+body::-webkit-scrollbar-thumb {
+  background-color: darkgrey;
+  outline: 1px solid slategrey;
 }
