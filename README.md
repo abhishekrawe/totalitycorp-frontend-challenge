@@ -12,7 +12,10 @@
 ## 🃏Glimse of Project ⏬
 
 ### `video `  
-https://user-images.githubusercontent.com/65603830/216839360-ee378249-515f-4f74-91f0-d3612ecdc301.mp4
+
+https://github.com/abhishekrawe/totalitycorp-frontend-challenge/assets/65603830/17268089-ff9b-4d84-b810-b1f584a6a494
+
+
 
 
 # 🐸Problem Statement and my approach (अप्रोच्‌)🐸
