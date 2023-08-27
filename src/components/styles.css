@@ -7,6 +7,18 @@
     margin: 10px 0;
 }
 
+.logo-image {
+    max-width: 150px;
+    max-height: 50px;
+    vertical-align: middle;
+}
+
+.logo-link {
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+}
+
 .cartitem {
     display: flex;
     justify-content: space-between;
@@ -105,6 +117,14 @@ a:hover {
 .title {
     font-size: 30px;
 }
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
 
 .productContainer {
     display: flex;

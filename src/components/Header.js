@@ -1,4 +1,4 @@
-import { FaShoppingCart } from "react-icons/fa";
+import { FaShoppingCart, FaUser } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { User, useAuth0 } from "@auth0/auth0-react";
 import {
@@ -27,7 +27,7 @@ const Header = () => {
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
       <Container>
         <Navbar.Brand>
-          <Link to="/">
+          <Link to="/" className="logo-link">
             <img
               src="https://www.totalitycorp.com/_next/static/media/logo.f83b3df6.webp"
               alt="Totality Corp Logo"
@@ -55,7 +55,7 @@ const Header = () => {
         )}
         <Nav className="">
           <Dropdown alignRight>
-            <Dropdown.Toggle variant="success">
+            <Dropdown.Toggle variant="success" style={{ marginRight: "8px" }}>
               <FaShoppingCart color="white" fontSize="25px" />
               <Badge>{cart.length}</Badge>
             </Dropdown.Toggle>
@@ -97,7 +97,12 @@ const Header = () => {
               )}
             </Dropdown.Menu>
           </Dropdown>
-          {isAuthenticated && <p>{user.name}</p>}
+          {isAuthenticated && (
+            <span className="avatars">
+              <img src={user.picture} alt={user.name} className="avatar" />
+              <span className="mx-2 text-white">{user.name}</span>
+            </span>
+          )}
           {isAuthenticated ? (
             <Button
               onClick={() =>
