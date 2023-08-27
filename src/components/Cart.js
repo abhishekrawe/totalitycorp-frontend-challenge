@@ -15,7 +15,9 @@ const Cart = () => {
   const [showPopup, setShowPopup] = useState(false); // State to control the popup visibility
   const [name, setName] = useState("");
   const [address, setAddress] = useState("");
+  const [orderSubmitted, setOrderSubmitted] = useState(false);
   const [pincode, setPincode] = useState("");
+  const [cvv, setCVV] = useState("");
 
 
 
@@ -36,9 +38,11 @@ const Cart = () => {
   };
 
   const handleOrderSubmit = () => {
-    // Handle order submission logic here
-    // You can send the order details to an API or perform any necessary actions
-    handlePopupClose();
+    setOrderSubmitted(true);
+    setTimeout(() => {
+      setOrderSubmitted(false);
+      handlePopupClose();
+    }, 3000);
   };
 
   return (
@@ -55,9 +59,6 @@ const Cart = () => {
                   <span>{prod.name}</span>
                 </Col>
                 <Col md={2}>₹ {prod.price}</Col>
-                <Col md={2}>
-                  <Rating rating={prod.ratings} />
-                </Col>
                 <Col md={2}>
                   <Form.Control
                     as="select"
@@ -110,59 +111,67 @@ const Cart = () => {
           <Modal.Title>Enter Order Details</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form>
-            <Form.Group>
-              <div className="card-container">
-                <img
-                  src="https://res.cloudinary.com/practicaldev/image/fetch/s--ivk3U_7B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9mom0yonfz5rd4vwk30x.png"
-                  alt="Card Image"
-                  className="card-image"
-                />
-              </div>
-              <div className="total">
-                <h3>
-                  Total Amount: <span class="total-amount">₹ {total}</span>
-                </h3>
-              </div>
-              {/* <Form.Label>Name on the Card</Form.Label> */}
-              <Form.Control
-                type="text"
-                value={name}
-                placeholder="Name on card"
-                onChange={(e) => setName(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group>
-              {/* <Form.Label>Address</Form.Label> */}
-              <Form.Control
-                type="text"
-                placeholder="Address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-            </Form.Group>
-
-            <div className="row">
-              <Form.Group className="col-md-6">
-                <Form.Label>Card Number</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="xxxx xxxx xxxx xxxx"
-                  value={pincode}
-                  onChange={(e) => setPincode(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group className="col-md-6">
-                <Form.Label>Enter CVV</Form.Label>
-                <Form.Control
-                  type="text"
-                  placeholder="xxx"
-                  value={pincode}
-                  onChange={(e) => setPincode(e.target.value)}
-                />
-              </Form.Group>
+          {orderSubmitted ? (
+            <div className="sucess-message">
+              <p>
+                <p>Your order has been Shipped 🎉🎉</p>
+              </p>
             </div>
-          </Form>
+          ) : (
+            <Form>
+              <Form.Group>
+                <div className="card-container">
+                  <img
+                    src="https://res.cloudinary.com/practicaldev/image/fetch/s--ivk3U_7B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9mom0yonfz5rd4vwk30x.png"
+                    alt="Card Image"
+                    className="card-image"
+                  />
+                </div>
+                <div className="total">
+                  <h3>
+                    Total Amount: <span class="total-amount">₹ {total}</span>
+                  </h3>
+                </div>
+                {/* <Form.Label>Name on the Card</Form.Label> */}
+                <Form.Control
+                  type="text"
+                  value={name}
+                  placeholder="Name on card"
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group>
+                {/* <Form.Label>Address</Form.Label> */}
+                <Form.Control
+                  type="text"
+                  placeholder="Address"
+                  value={address}
+                  onChange={(e) => setAddress(e.target.value)}
+                />
+              </Form.Group>
+
+              <div className="row">
+                <Form.Group className="col-md-6">
+                  <Form.Label>Card Number</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="xxxx xxxx xxxx xxxx"
+                    value={pincode}
+                    onChange={(e) => setPincode(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group className="col-md-6">
+                  <Form.Label>Enter CVV</Form.Label>
+                  <Form.Control
+                    type="text"
+                    placeholder="xxx"
+                    value={cvv}
+                    onChange={(e) => setCVV(e.target.value)}
+                  />
+                </Form.Group>
+              </div>
+            </Form>
+          )}
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handlePopupClose}>
