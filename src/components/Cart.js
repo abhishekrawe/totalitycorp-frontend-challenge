@@ -52,7 +52,12 @@ const Cart = () => {
             <ListGroup.Item key={prod.id}>
               <Row>
                 <Col md={2}>
-                  <Image src={prod.image} alt={prod.name} fluid rounded />
+                  <Image
+                    src={prod.image}
+                    alt={`Product: ${prod.name}`}
+                    fluid
+                    rounded
+                  />
                 </Col>
                 <Col md={2}>
                   <span>{prod.name}</span>
@@ -88,7 +93,6 @@ const Cart = () => {
                     }>
                     +
                   </Button>
-
                   <Button
                     type="button"
                     variant="dark"
@@ -135,7 +139,7 @@ const Cart = () => {
                 <div className="card-container">
                   <img
                     src="https://res.cloudinary.com/practicaldev/image/fetch/s--ivk3U_7B--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://dev-to-uploads.s3.amazonaws.com/i/9mom0yonfz5rd4vwk30x.png"
-                    alt="Card Image"
+                    alt="Credit card illustration"
                     className="card-image"
                   />
                 </div>
