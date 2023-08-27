@@ -94,7 +94,8 @@ a:hover {
     flex-direction: column;
     width: 20%;
     margin: 10px;
-    height: 65vh;
+    height: 60vh;
+    border-radius: 20px;
 }
 
 .filters>span {
