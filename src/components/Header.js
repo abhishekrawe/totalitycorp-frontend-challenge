@@ -1,5 +1,6 @@
 import { FaShoppingCart } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
+import { User, useAuth0 } from "@auth0/auth0-react";
 import {
   Badge,
   Button,
@@ -19,6 +20,8 @@ const Header = () => {
     dispatch,
     productDispatch,
   } = CartState();
+
+  const { loginWithRedirect, logout, isAuthenticated, user } = useAuth0();
 
   return (
     <Navbar bg="dark" variant="dark" style={{ height: 80 }}>
@@ -50,7 +53,7 @@ const Header = () => {
             />
           </Navbar.Text>
         )}
-        <Nav>
+        <Nav className="">
           <Dropdown alignRight>
             <Dropdown.Toggle variant="success">
               <FaShoppingCart color="white" fontSize="25px" />
@@ -94,6 +97,17 @@ const Header = () => {
               )}
             </Dropdown.Menu>
           </Dropdown>
+          {isAuthenticated && <p>{user.name}</p>}
+          {isAuthenticated ? (
+            <Button
+              onClick={() =>
+                logout({ logoutParams: { returnTo: window.location.origin } })
+              }>
+              Log Out
+            </Button>
+          ) : (
+            <Button onClick={() => loginWithRedirect()}>Log In</Button>
+          )}
         </Nav>
       </Container>
     </Navbar>

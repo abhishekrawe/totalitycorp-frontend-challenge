@@ -6,7 +6,7 @@ import Rating from "./Rating";
 const Filters = () => {
   const {
     productDispatch,
-    productState: { byStock, byFastDelivery, sort, byRating },
+    productState: { byFastDelivery, sort, byRating },
   } = CartState();
 
    const deliveryOptions = [
