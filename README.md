@@ -16,13 +16,17 @@
 https://github.com/abhishekrawe/totalitycorp-frontend-challenge/assets/65603830/17268089-ff9b-4d84-b810-b1f584a6a494
 
 
-
-
 # 🐸Problem Statement and my approach (अप्रोच्‌)🐸
 
-## 💜 Create an e-commerce website using React JS.
+🐸 Tech Stack Used 🐸 -
+- [ReactJs](https://react.dev/) - Build the Entire UI in reactJs with Javascript
+- [ReactBootstrap](https://react-bootstrap.netlify.app/) - For styling i used react-bootstrap
+- [FakerJs](https://fakerjs.dev/api/) - Fetch fake or Random data from Faker.js
+- [Auth0](https://auth0.com/) - For Authentication 
+- [ContextAPI] - Context API with useReducer Hook for State Management
 
-✨ API Docs - https://fakerjs.dev/api/
+
+## 💜 Create an e-commerce website using React JS.
 
 1️⃣ .❄️Product Listing:
 
@@ -56,15 +60,8 @@ https://github.com/abhishekrawe/totalitycorp-frontend-challenge/assets/65603830/
 
 | Mobile view            | Tab View              |
 | ---------------------- | ---------------------- |
-|<img src="https://github.com/abhishekrawe/totalitycorp-frontend-challenge/assets/65603830/c0661da8-c57e-4d7b-9902-333a5511f5e8" width="400" height="900"> | <img src="https://github.com/abhishekrawe/totalitycorp-frontend-challenge/assets/65603830/d0c805c9-e49a-4abe-9394-11ab5d79370d" width="600" height="900"> |
+|<img src="https://github.com/abhishekrawe/totalitycorp-frontend-challenge/assets/65603830/c0661da8-c57e-4d7b-9902-333a5511f5e8" width="400" height="700"> | <img src="https://github.com/abhishekrawe/totalitycorp-frontend-challenge/assets/65603830/d0c805c9-e49a-4abe-9394-11ab5d79370d" width="600" height="700"> |
 
-
-🐸 Tech Stack Used 🐸 -
-- [ReactJs](https://react.dev/) - Build the Entire UI in reactJs with Javascript
-- [ReactBootstrap](https://react-bootstrap.netlify.app/) - For styling i used react-bootstrap
-- [FakerJs](https://fakerjs.dev/api/) - Fetch fake or Random data from Faker.js
-- [Auth0](https://auth0.com/) - For Authentication 
-- [ContextAPI] - Context API with useReducer Hook for State Management
 
 
 
