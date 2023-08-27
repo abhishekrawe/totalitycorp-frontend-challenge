@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { CartState } from "../context/Context";
 import Rating from "./Rating";
@@ -9,6 +10,7 @@ const Filters = () => {
   } = CartState();
 
   // make state for rating
+  const [priceRange, setPriceRange] = useState([0, 100]);
 
   return (
     <div className="filters">
@@ -87,6 +89,18 @@ const Filters = () => {
           }
           style={{ cursor: "pointer" }}
         />
+      </span>
+      <span>
+        <label style={{ paddingRight: 10 }}>Price Range:</label>
+        <input
+          type="range"
+          min={0}
+          max={1000} // Set the maximum value according to your product prices
+          step={1}
+          value={priceRange[1]} // Use the upper bound of the range
+          onChange={(e) => setPriceRange([priceRange[0], parseFloat(e.target.value)])}
+        />
+        <span>{priceRange[1]}</span>
       </span>
       <Button
         variant="light"

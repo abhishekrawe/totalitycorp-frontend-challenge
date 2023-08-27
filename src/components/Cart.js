@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Button, Col, Form, Image, ListGroup, Row } from "react-bootstrap";
 import { AiFillDelete } from "react-icons/ai";
 import { CartState } from "../context/Context";
-import Rating from "./Rating";
 import { Modal } from "react-bootstrap";
 
 const Cart = () => {
@@ -59,28 +58,41 @@ const Cart = () => {
                   <span>{prod.name}</span>
                 </Col>
                 <Col md={2}>₹ {prod.price}</Col>
-                <Col md={2}>
-                  <Form.Control
-                    as="select"
-                    value={prod.qty}
-                    onChange={(e) =>
+                <Col md={3}>
+                  <Button
+                    type="button"
+                    variant="light"
+                    onClick={() =>
                       dispatch({
                         type: "CHANGE_CART_QTY",
                         payload: {
                           id: prod.id,
-                          qty: e.target.value,
+                          qty: Math.max(1, prod.qty - 1), // Ensure quantity doesn't go below 1
                         },
                       })
                     }>
-                    {[...Array(prod.inStock).keys()].map((x) => (
-                      <option key={x + 1}>{x + 1}</option>
-                    ))}
-                  </Form.Control>
-                </Col>
-                <Col md={2}>
+                    -
+                  </Button>
+                  <span style={{ margin: "0 10px" }}>{prod.qty}</span>
                   <Button
                     type="button"
                     variant="light"
+                    onClick={() =>
+                      dispatch({
+                        type: "CHANGE_CART_QTY",
+                        payload: {
+                          id: prod.id,
+                          qty: prod.qty + 1,
+                        },
+                      })
+                    }>
+                    +
+                  </Button>
+
+                  <Button
+                    type="button"
+                    variant="dark"
+                    className="ml-4"
                     onClick={() =>
                       dispatch({
                         type: "REMOVE_FROM_CART",
