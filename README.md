@@ -2,12 +2,10 @@
 
 # ❄️Frontend Developer Assignment
 
-# 📌depolyed link  [here](https://totality-frontend.netlify.app/).
+# 📌Depolyed link  [here](https://totality-frontend.netlify.app/).
 
-
-
-⬇️ For Running this repository on local 
-⬇️ Frontend - cd to totalitycorp-frontend-challenge > npm install > npm start
+- ⬇️ For Running this repository on local 
+- ⬇️ Frontend - cd to totalitycorp-frontend-challenge > npm install > npm start
 
 ## 🃏Glimse of Project ⏬
 
